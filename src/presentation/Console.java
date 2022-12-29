@@ -169,7 +169,7 @@ public class Console {
 				scanner.nextLine();
 				printEmptyLine();
 			} else if (matchesNegative) {
-				isValid = true;
+				printEmptyLine();
 			} else {
 				println(INVALID_CONTINUE_ERROR);
 			}
