@@ -165,7 +165,7 @@ public class Console {
 			Boolean matchesNegative = negativeMatcher.matches();
 
 			if (matchesAffirmative) {
-				isValid = true;			
+				isValid = true;
 				scanner.nextLine();
 				printEmptyLine();
 			} else if (matchesNegative) {
