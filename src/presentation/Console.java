@@ -153,11 +153,9 @@ public class Console {
 
 	// Prompt the user to continue
 	public static boolean promptToContinue() {
+		boolean isValid = false;
 		
-		boolean willContinue = false;
-		boolean isGettingInput = true;
-		
-		while (isGettingInput) {
+		while (!isValid) {
 			print(PROMPT_CONTINUE);
 			
 			String choice = scanner.next();
@@ -167,18 +165,16 @@ public class Console {
 			Boolean matchesNegative = negativeMatcher.matches();
 
 			if (matchesAffirmative) {
-				isGettingInput = false;
-				willContinue = true;
+				isValid = true;
 				scanner.nextLine();
 				printEmptyLine();
 			} else if (matchesNegative) {
-				isGettingInput = false;
-				willContinue = false;
+				isValid = true;
 			} else {
 				println(INVALID_CONTINUE_ERROR);
 			}
 		}
 		
-		return willContinue;
+		return isValid;
 	}
 }
